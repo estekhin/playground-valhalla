@@ -1,0 +1,7 @@
+# IDEA
+.idea/
+out/
+
+# Maven
+target/
+.flattened-pom.xml
