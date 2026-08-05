@@ -8,14 +8,12 @@ The problematic code snippet:
 new SubClass().get()
 ```
 
-"Same" compilation unit: `playground.valhalla.separate_compilation.SameCompilationUnitUsage` class in the main source.
+is present in the "same" compilation unit in the `SameCompilationUnitUsage` class in the main source
+and in the "different" compilation unit in the `DifferentCompilationUnitUsage` class in the test source.
 
-"Different" compilation unit: `playground.valhalla.separate_compilation.DifferentCompilationUnitUsage` class in the test source.
-
+Running from the root directory
 ```shell
-export JAVA_HOME=.../openjdk-27-jep401ea3+1-1_linux-x64_bin/jdk-27
-
-./mvnw clean verify
+./mvnw clean verify -pl :valhalla-ea-separate-compilation-failure
 ```
 
 results in
