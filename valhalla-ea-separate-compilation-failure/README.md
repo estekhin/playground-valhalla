@@ -11,6 +11,8 @@ new SubClass().get()
 is present in the "same" compilation unit in the `SameCompilationUnitUsage` class in the main source
 and in the "different" compilation unit in the `DifferentCompilationUnitUsage` class in the test source.
 
+## reproducer
+
 Running from the root directory
 ```shell
 ./mvnw clean verify -pl :valhalla-ea-separate-compilation-failure
