@@ -13,7 +13,7 @@ Using ternary in other assignments verifies fine.
 
 Running from the root directory
 ```shell
-./mvnw clean verify -pl :valhalla-ea-record-verify-error
+./mvnw clean verify -pl :valhalla-ea-record-verify-error -Dpreview
 ```
 
 results in
