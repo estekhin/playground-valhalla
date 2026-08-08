@@ -16,7 +16,6 @@ class ValueRecordWithTernaryLastTest {
     void preview() {
         var obj = new ValueRecordWithTernaryLast(1, 2);
         Assertions.assertFalse(Objects.hasIdentity(obj));
-        Assertions.assertTrue(Objects.isValueObject(obj));
     }
 
 }

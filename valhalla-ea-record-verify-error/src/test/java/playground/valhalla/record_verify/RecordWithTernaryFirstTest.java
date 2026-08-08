@@ -16,7 +16,6 @@ class RecordWithTernaryFirstTest {
     void preview() {
         var obj = new RecordWithTernaryFirst(1, 2);
         Assertions.assertTrue(Objects.hasIdentity(obj));
-        Assertions.assertFalse(Objects.isValueObject(obj));
     }
 
 }

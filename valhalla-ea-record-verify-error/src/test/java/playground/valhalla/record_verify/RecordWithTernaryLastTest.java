@@ -16,7 +16,6 @@ class RecordWithTernaryLastTest {
     void preview() {
         var obj = new RecordWithTernaryLast(1, 2);
         Assertions.assertTrue(Objects.hasIdentity(obj));
-        Assertions.assertFalse(Objects.isValueObject(obj));
     }
 
 }
