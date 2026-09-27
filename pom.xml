@@ -13,6 +13,8 @@
     </properties>
 
     <modules>
+        <module>valhalla-ea-fun-valhalla</module>
+        <module>valhalla-ea-fun-vanilla</module>
         <module>valhalla-ea-heap-flattening-valhalla</module>
         <module>valhalla-ea-heap-flattening-vanilla</module>
         <module>valhalla-ea-record-verify-error</module>
