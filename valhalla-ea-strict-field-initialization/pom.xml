@@ -8,7 +8,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>valhalla-ea-record-verify-error</artifactId>
+    <artifactId>valhalla-ea-strict-field-initialization</artifactId>
 
     <dependencies>
         <dependency>
