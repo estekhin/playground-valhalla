@@ -5,9 +5,9 @@ import jdk.internal.vm.annotation.NullRestricted;
 import java.time.Instant;
 import java.util.Optional;
 
-public value record NullRestrictedValueRecordEntity(
+public value record NullRestrictedRecordEntity(
     @NullRestricted
-    ValueRecordId id,
+    NullRestrictedEntityId id,
     @NullRestricted
     Optional<String> description,
     @NullRestricted

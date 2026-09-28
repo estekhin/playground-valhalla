@@ -5,9 +5,9 @@ import jdk.internal.vm.annotation.NullRestricted;
 import java.time.Instant;
 import java.util.Optional;
 
-public value class NullRestrictedValueClassEntity {
+public value class NullRestrictedClassEntity {
     @NullRestricted
-    ValueRecordId id;
+    NullRestrictedEntityId id;
     @NullRestricted
     Optional<String> description;
     @NullRestricted
@@ -17,7 +17,7 @@ public value class NullRestrictedValueClassEntity {
     @NullRestricted
     Boolean deleted;
 
-    NullRestrictedValueClassEntity(ValueRecordId id, Optional<String> description, Instant createdAt, Integer version, Boolean deleted) {
+    NullRestrictedClassEntity(NullRestrictedEntityId id, Optional<String> description, Instant createdAt, Integer version, Boolean deleted) {
         this.id = id;
         this.description = description;
         this.createdAt = createdAt;
