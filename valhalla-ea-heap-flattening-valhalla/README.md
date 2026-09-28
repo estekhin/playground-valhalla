@@ -57,6 +57,24 @@ Static fields:
 Instance size = 32 bytes
 ```
 
+```
+VM.class_print_layout playground/valhalla/heap_flattening/RecordEntity
+Class playground.valhalla.heap_flattening.RecordEntity [@app]:
+  @ 8  "id" Lplayground/valhalla/heap_flattening/EntityId;  
+  @ 12  "description" Ljava/util/Optional;  
+  @ 16  "createdAt" Ljava/time/Instant;  
+  @ 20  "version" Ljava/lang/Integer;  
+  @ 24  "deleted" Ljava/lang/Boolean;  
+
+VM.class_print_layout playground/valhalla/heap_flattening/ClassEntity
+Class playground.valhalla.heap_flattening.ClassEntity [@app]:
+  @ 8  "id" Lplayground/valhalla/heap_flattening/EntityId;  
+  @ 12  "description" Ljava/util/Optional;  
+  @ 16  "createdAt" Ljava/time/Instant;  
+  @ 20  "version" Ljava/lang/Integer;  
+  @ 24  "deleted" Ljava/lang/Boolean;  
+```
+
 ## Vanilla Code + Vanilla Compile + Valhalla Run
 
 Compiling from the root directory
@@ -115,6 +133,30 @@ Instance fields:
 Static fields:
  @0 RESERVED 120/-
 Instance size = 40 bytes
+```
+
+```
+VM.class_print_layout playground/valhalla/heap_flattening/RecordEntity
+Class playground.valhalla.heap_flattening.RecordEntity [@app]:
+  @ 8  "description" Ljava/util/Optional;  flat
+  @ 8     "value" Ljava/lang/Object;  
+  @ 16  "version" Ljava/lang/Integer;  flat
+  @ 16     "value" I  
+  @ 24  "deleted" Ljava/lang/Boolean;  flat
+  @ 24     "value" Z  
+  @ 28  "id" Lplayground/valhalla/heap_flattening/EntityId;  
+  @ 32  "createdAt" Ljava/time/Instant;  
+
+VM.class_print_layout playground/valhalla/heap_flattening/ClassEntity
+Class playground.valhalla.heap_flattening.ClassEntity [@app]:
+  @ 8  "description" Ljava/util/Optional;  flat
+  @ 8     "value" Ljava/lang/Object;  
+  @ 16  "version" Ljava/lang/Integer;  flat
+  @ 16     "value" I  
+  @ 24  "deleted" Ljava/lang/Boolean;  flat
+  @ 24     "value" Z  
+  @ 28  "id" Lplayground/valhalla/heap_flattening/EntityId;  
+  @ 32  "createdAt" Ljava/time/Instant;  
 ```
 
 ## Vanilla Code + Valhalla Compile + Valhalla Run
@@ -177,6 +219,32 @@ Instance fields:
 Static fields:
  @0 RESERVED 120/-
 Instance size = 40 bytes
+```
+
+```
+VM.class_print_layout playground/valhalla/heap_flattening/RecordEntity
+Class playground.valhalla.heap_flattening.RecordEntity [@app]:
+  @ 8  "createdAt" Ljava/time/Instant;  flat
+  @ 8     "seconds" J  
+  @ 16     "nanos" I  
+  @ 24  "description" Ljava/util/Optional;  flat
+  @ 24     "value" Ljava/lang/Object;  
+  @ 29  "deleted" Ljava/lang/Boolean;  flat
+  @ 29     "value" Z  
+  @ 32  "version" Ljava/lang/Integer;  flat
+  @ 32     "value" I  
+  @ 40  "id" Lplayground/valhalla/heap_flattening/EntityId;  
+
+VM.class_print_layout playground/valhalla/heap_flattening/ClassEntity
+Class playground.valhalla.heap_flattening.ClassEntity [@app]:
+  @ 8  "description" Ljava/util/Optional;  flat
+  @ 8     "value" Ljava/lang/Object;  
+  @ 16  "version" Ljava/lang/Integer;  flat
+  @ 16     "value" I  
+  @ 24  "deleted" Ljava/lang/Boolean;  flat
+  @ 24     "value" Z  
+  @ 28  "id" Lplayground/valhalla/heap_flattening/EntityId;  
+  @ 32  "createdAt" Ljava/time/Instant;  
 ```
 
 ## Valhalla Code + Valhalla Compile + Valhalla Run
@@ -291,6 +359,37 @@ oop acmp map: 24 32 36
 ```
 
 ```
+VM.class_print_layout playground/valhalla/heap_flattening/RecordEntity
+Class playground.valhalla.heap_flattening.RecordEntity [@app]:
+  @ 8  "createdAt" Ljava/time/Instant;  flat
+  @ 8     "seconds" J  
+  @ 16     "nanos" I  
+  @ 24  "id" Lplayground/valhalla/heap_flattening/EntityId;  flat
+  @ 24     "container" Lplayground/valhalla/heap_flattening/EntityContainerId;  flat
+  @ 24        "value" Ljava/lang/String;  
+  @ 32     "value" Ljava/lang/String;  
+  @ 36  "description" Ljava/util/Optional;  flat
+  @ 36     "value" Ljava/lang/Object;  
+  @ 41  "deleted" Ljava/lang/Boolean;  flat
+  @ 41     "value" Z  
+  @ 44  "version" Ljava/lang/Integer;  flat
+  @ 44     "value" I  
+
+VM.class_print_layout playground/valhalla/heap_flattening/ClassEntity
+Class playground.valhalla.heap_flattening.ClassEntity [@app]:
+  @ 8  "createdAt" Ljava/time/Instant;  flat
+  @ 8     "seconds" J  
+  @ 16     "nanos" I  
+  @ 24  "id" Lplayground/valhalla/heap_flattening/EntityId;  flat
+  @ 24     "container" Lplayground/valhalla/heap_flattening/EntityContainerId;  flat
+  @ 24        "value" Ljava/lang/String;  
+  @ 32     "value" Ljava/lang/String;  
+  @ 36  "description" Ljava/util/Optional;  flat
+  @ 36     "value" Ljava/lang/Object;  
+  @ 41  "deleted" Ljava/lang/Boolean;  flat
+  @ 41     "value" Z  
+  @ 44  "version" Ljava/lang/Integer;  flat
+  @ 44     "value" I  
 ```
 
 ## NullRestricted Valhalla Code + Valhalla Compile + Valhalla Run
@@ -401,35 +500,31 @@ oop acmp map: 8 12 16 24
 ```
 
 ```
-VM.class_print_layout playground/valhalla/heap_flattening/ValueRecordId
-Class playground/valhalla/heap_flattening/ValueRecordId [@app]:
-  @ 8  "containerId" Ljava/lang/String;  
-  @ 12  "entityId" Ljava/lang/String;  
-
-
-VM.class_print_layout playground/valhalla/heap_flattening/NullRestrictedValueRecordEntity
-Class playground/valhalla/heap_flattening/NullRestrictedValueRecordEntity [@app]:
-  @ 8  "id" Lplayground/valhalla/heap_flattening/ValueRecordId;  // inline type  flat
-  @ 8     "containerId" Ljava/lang/String;  
-  @ 12     "entityId" Ljava/lang/String;  
-  @ 16  "description" Ljava/util/Optional;  // inline type  flat
+VM.class_print_layout playground/valhalla/heap_flattening/NullRestrictedRecordEntity
+Class playground.valhalla.heap_flattening.NullRestrictedRecordEntity [@app]:
+  @ 8  "id" Lplayground/valhalla/heap_flattening/NullRestrictedEntityId;  // value type  flat
+  @ 8     "container" Lplayground/valhalla/heap_flattening/NullRestrictedEntityContainerId;  // value type  flat
+  @ 8        "value" Ljava/lang/String;  
+  @ 12     "value" Ljava/lang/String;  
+  @ 16  "description" Ljava/util/Optional;  // value type  flat
   @ 16     "value" Ljava/lang/Object;  
-  @ 20  "version" Ljava/lang/Integer;  // inline type  flat
+  @ 20  "version" Ljava/lang/Integer;  // value type  flat
   @ 20     "value" I  
-  @ 24  "createdAt" Ljava/time/Instant;  // inline type  
-  @ 28  "deleted" Ljava/lang/Boolean;  // inline type  flat
+  @ 24  "createdAt" Ljava/time/Instant;  // value type  
+  @ 28  "deleted" Ljava/lang/Boolean;  // value type  flat
   @ 28     "value" Z  
 
-VM.class_print_layout playground/valhalla/heap_flattening/NullRestrictedValueClassEntity
-Class playground/valhalla/heap_flattening/NullRestrictedValueClassEntity [@app]:
-  @ 8  "id" Lplayground/valhalla/heap_flattening/ValueRecordId;  // inline type  flat
-  @ 8     "containerId" Ljava/lang/String;  
-  @ 12     "entityId" Ljava/lang/String;  
-  @ 16  "description" Ljava/util/Optional;  // inline type  flat
+VM.class_print_layout playground/valhalla/heap_flattening/NullRestrictedClassEntity
+Class playground.valhalla.heap_flattening.NullRestrictedClassEntity [@app]:
+  @ 8  "id" Lplayground/valhalla/heap_flattening/NullRestrictedEntityId;  // value type  flat
+  @ 8     "container" Lplayground/valhalla/heap_flattening/NullRestrictedEntityContainerId;  // value type  flat
+  @ 8        "value" Ljava/lang/String;  
+  @ 12     "value" Ljava/lang/String;  
+  @ 16  "description" Ljava/util/Optional;  // value type  flat
   @ 16     "value" Ljava/lang/Object;  
-  @ 20  "version" Ljava/lang/Integer;  // inline type  flat
+  @ 20  "version" Ljava/lang/Integer;  // value type  flat
   @ 20     "value" I  
-  @ 24  "createdAt" Ljava/time/Instant;  // inline type  
-  @ 28  "deleted" Ljava/lang/Boolean;  // inline type  flat
+  @ 24  "createdAt" Ljava/time/Instant;  // value type  
+  @ 28  "deleted" Ljava/lang/Boolean;  // value type  flat
   @ 28     "value" Z  
 ```
