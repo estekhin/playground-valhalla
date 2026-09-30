@@ -20,6 +20,7 @@
         <module>valhalla-ea-heap-flattening-valhalla</module>
         <module>valhalla-ea-heap-flattening-vanilla</module>
         <module>valhalla-ea-record-verify-error</module>
+        <module>valhalla-ea-scalarization</module>
         <module>valhalla-ea-self-referencing-constructor-compilation-failure</module>
         <module>valhalla-ea-separate-compilation-failure</module>
         <module>valhalla-ea-strict-field-initialization</module>
@@ -43,15 +44,20 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.15.0</version>
+                    <version>3.16.0</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-plugin</artifactId>
-                    <version>3.5.6</version>
+                    <version>3.6.0</version>
                     <configuration>
                         <runOrder>alphabetical</runOrder>
                     </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-shade-plugin</artifactId>
+                    <version>3.6.2</version>
                 </plugin>
             </plugins>
         </pluginManagement>
